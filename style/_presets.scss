@@ -1,0 +1,153 @@
+// 颜色
+$color-primary: #d42a29;
+$color-primary-4: rgba(212, 42, 41, 0.04);
+$color-primary-8: rgba(212, 42, 41, 0.08);
+$color-primary-12: rgba(212, 42, 41, 0.12);
+
+$color-bg: #fafafa;
+
+$color-black-100: rgba(22, 24, 26, 1);
+$color-black-80: rgba(22, 24, 26, 0.8);
+$color-black-64: rgba(22, 24, 26, 0.64);
+$color-black-48: rgba(22, 24, 26, 0.48);
+$color-black-32: rgba(22, 24, 26, 0.32);
+$color-black-16: rgba(22, 24, 26, 0.16);
+$color-black-12: rgba(22, 24, 26, 0.12);
+$color-black-8: rgba(22, 24, 26, 0.08);
+$color-black-4: rgba(22, 24, 26, 0.04);
+$color-black-2: rgba(22, 24, 26, 0.02);
+
+$color-white-100: rgba(255, 255, 255, 1);
+$color-white-80: rgba(255, 255, 255, 0.8);
+$color-white-64: rgba(255, 255, 255, 0.64);
+$color-white-48: rgba(255, 255, 255, 0.48);
+$color-white-32: rgba(255, 255, 255, 0.32);
+$color-white-16: rgba(255, 255, 255, 0.16);
+$color-white-12: rgba(255, 255, 255, 0.12);
+$color-white-8: rgba(255, 255, 255, 0.08);
+$color-white-4: rgba(255, 255, 255, 0.04);
+
+// 字体
+.heading-1 {
+  font-size: 4.8rem;
+  line-height: 5.6rem;
+}
+
+.heading-2 {
+  font-size: 4rem;
+  line-height: 4.8rem;
+}
+
+.heading-3 {
+  font-size: 3.2rem;
+  line-height: 4rem;
+}
+
+.heading-4 {
+  font-size: 2.4rem;
+  line-height: 3.2rem;
+}
+
+.heading-5 {
+  font-size: 2rem;
+  line-height: 2.8rem;
+}
+
+.heading-6 {
+  font-size: 1.8rem;
+  line-height: 2.6rem;
+}
+
+.subheading {
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 2.4rem;
+}
+
+.subline {
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 2.2rem;
+}
+
+.regular {
+  font-size: 1.4rem;
+  line-height: 2.2rem;
+}
+
+.captionM {
+  font-size: 1.2rem;
+  line-height: 2rem;
+  font-weight: 500;
+  font-weight: 600;
+}
+
+.caption {
+  font-size: 1.2rem;
+  line-height: 2rem;
+  font-weight: 400;
+}
+
+// 过渡
+@mixin transition-default {
+  transition: all 0.2s ease-out;
+}
+
+// 其它
+@mixin sep {
+  height: 1px;
+}
+
+$font-size-increment: 0.4rem;
+
+// 初始化
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+  color: $color-black-100;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.whiteMain,
+.footer {
+  max-width: 1512px;
+  padding-inline: 10rem;
+  margin: auto;
+}
+
+.greyMain {
+  background: linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
+}
+
+.linearMain {
+  background: linear-gradient(180deg, #fafafa 0%, #ffffff 100%);
+}
+
+.highlight {
+  color: $color-primary;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+button {
+  border: none;
+  background: none;
+}

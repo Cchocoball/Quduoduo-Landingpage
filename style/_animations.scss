@@ -1,0 +1,37 @@
+@keyframes logo-scroll {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes logo-scroll-reverse {
+  0% {
+    transform: translateY(-50%);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes logo-scroll-stagger {
+  0% {
+    transform: translateY(10rem);
+  }
+  100% {
+    transform: translateY(-50%) translateY(10rem);
+  }
+}
+
+@keyframes emerge {
+  0% {
+    opacity: 0;
+    transform: translateY(4rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0rem);
+  }
+}

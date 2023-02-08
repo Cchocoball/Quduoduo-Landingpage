@@ -1,0 +1,207 @@
+.button-large-primary {
+  height: 3.6rem;
+  color: $color-white-100;
+  background-color: $color-primary;
+  padding-inline: 2rem;
+  font-size: 1.6rem;
+  font-weight: 500;
+  border-radius: 2px;
+
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    cursor: pointer;
+    transform: translateY(-1px);
+    background-color: lighten($color: $color-primary, $amount: 8%);
+    @include transition-default;
+  }
+
+  &:active {
+    transform: translateY(1px);
+    background-color: darken($color: $color-primary, $amount: 8%);
+    @include transition-default;
+  }
+}
+
+@mixin button-primary($height, $padding-inline, $font-size) {
+}
+
+.button-large-text {
+  height: 3.6rem;
+  color: $color-primary;
+
+  padding-inline: 2rem;
+  font-size: 1.6rem;
+  font-weight: 500;
+  border-radius: 2px;
+
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    cursor: pointer;
+    background-color: $color-primary-8;
+    transform: translateY(-1px);
+    @include transition-default;
+  }
+
+  &:active {
+    transform: translateY(1px);
+    background-color: opacify($color-primary-8, 0.04);
+    @include transition-default;
+  }
+}
+
+.button-xlarge-primary {
+  height: 4rem;
+  color: $color-white-100;
+  background-color: $color-primary;
+  padding-inline: 2rem;
+  font-size: 1.6rem;
+  font-weight: 500;
+  border-radius: 2px;
+
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+  justify-content: center;
+
+  & span {
+    font-size: 2.4rem;
+  }
+
+  &:hover {
+    cursor: pointer;
+    transform: translateY(-1px);
+    background-color: lighten($color: $color-primary, $amount: 8%);
+    @include transition-default;
+  }
+
+  &:active {
+    transform: translateY(1px);
+    background-color: darken($color: $color-primary, $amount: 8%);
+    @include transition-default;
+  }
+}
+
+.button-xlarge-ghost {
+  height: 4rem;
+  color: $color-primary;
+  background-color: $color-white-100;
+  border: 1px solid $color-primary;
+  padding-inline: 2rem;
+  font-size: 1.6rem;
+  font-weight: 500;
+  border-radius: 2px;
+
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+  justify-content: center;
+
+  & span {
+    font-size: 2.4rem;
+  }
+
+  &:hover {
+    cursor: pointer;
+    transform: translateY(-1px);
+    background-color: $color-primary-8;
+    @include transition-default;
+  }
+
+  &:active {
+    transform: translateY(1px);
+    background-color: opacify($color-primary-8, 0.04);
+    @include transition-default;
+  }
+}
+
+.button-xlarge-light {
+  height: 4rem;
+  color: $color-primary;
+  background-color: $color-white-100;
+  border: 1px solid $color-black-8;
+  box-shadow: 0px 1px 2px 0px #16181a0d;
+  padding-inline: 2rem;
+  font-size: 1.6rem;
+  font-weight: 500;
+  border-radius: 2px;
+
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+  justify-content: center;
+
+  & span {
+    font-size: 2rem;
+  }
+
+  &:hover {
+    cursor: pointer;
+    border: 1px solid $color-primary;
+    box-shadow: 0px 4px 8px -2px #16181a1a, 0px 2px 4px -2px #16181a0f;
+    transform: translateY(-1px);
+    @include transition-default;
+  }
+
+  &:active {
+    @include transition-default;
+    transform: translateY(1px);
+  }
+}
+
+.sep {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    rgba(212, 42, 41, 0.16) 0%,
+    rgba(212, 42, 41, 0) 100%
+  );
+}
+
+.icon-button {
+  &:hover {
+    cursor: pointer;
+    color: $color-primary;
+    transform: scale(1.1);
+    @include transition-default;
+  }
+
+  &:active {
+    color: darken($color: $color-primary, $amount: 8%);
+    transform: scale(1);
+    @include transition-default;
+  }
+}
+
+.icon-button-bg {
+  &:hover {
+    cursor: pointer;
+    background-color: $color-primary;
+    transform: scale(1.1);
+    @include transition-default;
+  }
+
+  &:active {
+    background-color: darken($color: $color-primary, $amount: 8%);
+    transform: scale(1);
+    @include transition-default;
+  }
+}
+
+.sectionTitle {
+  h2 {
+    margin-block-end: 1.6rem;
+  }
+
+  p {
+    margin-block-end: 4rem;
+    color: $color-black-64;
+  }
+}

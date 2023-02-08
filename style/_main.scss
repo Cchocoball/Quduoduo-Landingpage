@@ -1,0 +1,790 @@
+.header {
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+
+  padding-inline: 4rem;
+  height: 6.4rem;
+  background-color: $color-white-80;
+  // border-bottom: 1px solid $color-black-8;
+  backdrop-filter: blur(1.2rem);
+
+  display: flex;
+  justify-content: space-between;
+
+  &_nav {
+    display: flex;
+    align-items: center;
+    gap: 3.2rem;
+    white-space: nowrap;
+
+    &_item {
+      .logo {
+        width: 6.8rem;
+      }
+
+      & a {
+        display: flex;
+        gap: 0.4rem;
+        align-items: center;
+
+        .material-symbols-rounded {
+          font-size: 2rem;
+          font-weight: 500;
+        }
+      }
+
+      & a:link,
+      a:visited {
+        color: $color-black-100;
+      }
+
+      & a:hover {
+        color: $color-primary;
+        @include transition-default;
+      }
+
+      & a:active {
+        color: darken($color: $color-primary, $amount: 8%);
+        @include transition-default;
+      }
+    }
+  }
+
+  &_buttonGroup {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    white-space: nowrap;
+  }
+}
+
+.hero {
+  padding-block: 16rem 12rem;
+
+  display: grid;
+  gap: 12rem;
+  align-items: center;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-flow: row dense;
+
+  &_content {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+
+    &_slg {
+      animation: emerge 0.6s ease-out backwards;
+    }
+
+    &_slg h1:first-child {
+      margin-block-end: 0.8rem;
+    }
+
+    &_buttonGroup {
+      display: flex;
+      gap: 0.8rem;
+
+      animation: emerge 0.6s ease-out 0.3s backwards;
+    }
+
+    &_statistics {
+      display: flex;
+      justify-content: space-between;
+
+      animation: emerge 0.6s ease-out 0.6s backwards;
+
+      &_statistic h4 {
+        margin-block-end: 0.4rem;
+
+        &:first-child h4 {
+          color: $color-primary;
+        }
+      }
+
+      &_statistic:first-child h4 {
+        color: $color-primary;
+      }
+    }
+  }
+
+  &_banner {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    animation: emerge 0.6s ease-out backwards;
+
+    &_img {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border-radius: 4px;
+      position: relative;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      background-image: url(../assets/banner.webp);
+      background-size: cover;
+
+      &_page {
+        background-color: $color-white-100;
+        border-radius: 999px;
+        box-shadow: 0px 2px 4px -2px rgba(22, 24, 26, 0.06),
+          0px 4px 8px -2px rgba(22, 24, 26, 0.1);
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        user-select: none;
+
+        @include transition-default;
+
+        &:hover {
+          cursor: pointer;
+          scale: 1.2;
+          box-shadow: 0px 4px 6px -2px rgba(22, 24, 26, 0.03),
+            0px 12px 16px -4px rgba(22, 24, 26, 0.08);
+
+          & span {
+            color: $color-primary;
+          }
+        }
+
+        &:active {
+          scale: 1;
+          box-shadow: 0px 2px 4px -2px rgba(22, 24, 26, 0.06),
+            0px 4px 8px -2px rgba(22, 24, 26, 0.1);
+
+          & span {
+            color: darken($color-primary, 8%);
+          }
+        }
+
+        & span {
+          color: $color-black-80;
+          font-size: 4rem;
+        }
+      }
+
+      & .previous {
+        transform: translateX(-50%);
+      }
+
+      & .next {
+        transform: translateX(50%);
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: $color-black-16;
+        rotate: -5deg;
+        z-index: -1;
+      }
+    }
+  }
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  column-gap: 2rem;
+  padding-block: 4rem;
+
+  &_feature {
+    background: linear-gradient(
+      180deg,
+      rgba(22, 24, 26, 0.02) 0%,
+      rgba(22, 24, 26, 0) 100%
+    );
+    padding: 3.2rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+
+    &_icon {
+      width: 4rem;
+    }
+
+    & .icon-1 {
+      border-radius: 999px;
+      box-shadow: 0px 4px 6px -4px rgba(255, 78, 77, 0.12),
+        0px 8px 12px -4px rgba(255, 78, 77, 0.32);
+    }
+
+    & .icon-2 {
+      border-radius: 999px;
+      box-shadow: 0px 4px 6px -4px rgba(255, 78, 77, 0.12),
+        0px 8px 12px -4px rgba(255, 78, 77, 0.32);
+    }
+
+    & .icon-3 {
+      border-radius: 999px;
+      box-shadow: 0px 4px 6px -4px rgba(0, 171, 89, 0.12),
+        0px 8px 12px -4px rgba(0, 171, 89, 0.32);
+    }
+
+    & .icon-4 {
+      border-radius: 999px;
+      box-shadow: 0px 4px 6px -4px rgba(43, 128, 255, 0.12),
+        0px 8px 12px -4px rgba(43, 128, 255, 0.32);
+    }
+
+    & .icon-5 {
+      border-radius: 999px;
+      box-shadow: 0px 4px 6px -4px rgba(105, 68, 255, 0.12),
+        0px 8px 12px -4px rgba(105, 68, 255, 0.32);
+    }
+
+    &_text {
+      & h5 {
+        margin-block-end: 0.4rem;
+      }
+
+      & p {
+        color: $color-black-64;
+      }
+    }
+  }
+}
+
+.hot {
+  padding-block: 8rem;
+
+  display: grid;
+  grid-template-rows: auto 4rem auto 2rem auto;
+
+  &_days {
+    display: flex;
+
+    gap: 2rem;
+
+    &_day {
+      background-color: $color-black-2;
+      padding-inline: 2rem;
+      padding-block: 1.2rem;
+      flex-grow: 1;
+      border-radius: 4px;
+      border: 2px solid $color-black-8;
+
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      column-gap: 1.2rem;
+      row-gap: 0.4rem;
+      @include transition-default;
+
+      &:hover {
+        cursor: pointer;
+        background-color: $color-primary-4;
+        border: 2px solid $color-primary;
+      }
+
+      &:active {
+        background-color: $color-primary-8;
+      }
+
+      &:active &_date {
+        transform: translateY(0.4rem);
+      }
+
+      &:hover &_date {
+        &_month {
+          background-color: $color-primary;
+        }
+
+        &_day {
+          color: $color-black-100;
+        }
+      }
+
+      &:hover &_remain {
+        color: $color-primary;
+      }
+
+      & .heading-6 {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+      }
+
+      &_remain {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+        color: $color-black-48;
+
+        display: flex;
+        align-items: baseline;
+        gap: 0.4rem;
+        @include transition-default;
+      }
+
+      &_date {
+        max-width: 6rem;
+        min-width: 5.6rem;
+        grid-column: 2 / 3;
+        grid-row: 1 / 3;
+        border-radius: 4px;
+        height: fit-content;
+        overflow: hidden;
+        box-shadow: 0px 4px 6px -2px rgba(22, 24, 26, 0.03),
+          0px 12px 16px -4px rgba(22, 24, 26, 0.08);
+
+        display: flex;
+        flex-direction: column;
+        @include transition-default;
+
+        &_month {
+          background-color: $color-black-32;
+          padding-inline: 1.6rem;
+          color: $color-white-100;
+          white-space: nowrap;
+
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        &_day {
+          background-color: $color-white-100;
+          padding-inline: 1.65rem;
+          padding-block: 0.4rem;
+          color: $color-black-64;
+
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    }
+  }
+
+  &_musicLists {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 2rem;
+    flex-grow: 2;
+
+    .coverBox {
+      &:hover {
+        &:hover .playButton {
+          opacity: 1;
+        }
+
+        img {
+          cursor: pointer;
+          filter: brightness(0.64);
+          box-shadow: 0px 2px 4px -2px rgba(22, 24, 26, 0.06),
+            0px 4px 8px -2px rgba(22, 24, 26, 0.1);
+          transform: scale(1.02);
+        }
+      }
+
+      &:active {
+        img {
+          transform: scale(1);
+          box-shadow: 0;
+        }
+      }
+    }
+
+    &_item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      position: relative;
+      border-radius: 4px;
+
+      &_playButton {
+        position: absolute;
+        left: 0.8rem;
+        bottom: 3.6rem;
+        background-color: $color-white-16;
+        backdrop-filter: blur(8px);
+        border-radius: 999px;
+        z-index: 2;
+        padding: 0.4rem;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 3.6rem;
+        height: 3.6rem;
+
+        opacity: 0;
+        @include transition-default;
+
+        &:hover {
+          cursor: pointer;
+          background-color: $color-primary;
+        }
+
+        &:active {
+          background-color: darken($color-primary, 8%);
+          & span {
+            transform: scale(0.8);
+          }
+        }
+
+        & span {
+          color: $color-white-100;
+          font-size: 3.2rem;
+          font-variation-settings: "FILL" 1;
+
+          @include transition-default;
+        }
+      }
+
+      & img {
+        width: 100%;
+        border-radius: 4px;
+
+        @include transition-default;
+      }
+    }
+  }
+}
+
+.master {
+  padding-block: 8rem;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 45.6rem;
+  row-gap: 4rem;
+
+  &_title {
+    h2 {
+      margin-block-end: 1.6rem;
+    }
+
+    p {
+      margin-block-end: 4rem;
+      color: $color-black-64;
+    }
+  }
+
+  &_index {
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+    color: $color-black-32;
+
+    & h3 {
+      @include transition-default;
+
+      &:hover {
+        cursor: pointer;
+        color: $color-primary;
+        transform: scale(1.02);
+      }
+
+      &:active {
+        cursor: pointer;
+        color: darken($color-primary, 8%);
+        transform: scale(1);
+      }
+    }
+  }
+
+  &_img {
+    display: flex;
+    flex-direction: column;
+    gap: 9rem;
+
+    .imgContainer {
+      position: relative;
+      .secondary {
+        position: absolute;
+        left: 26.3rem;
+        top: 13.9rem;
+      }
+    }
+
+    &_description {
+      width: 37.8rem;
+
+      .line {
+        background-color: $color-black-100;
+        height: 2px;
+        width: 2rem;
+        margin-block-end: 1.2rem;
+      }
+    }
+  }
+}
+
+.brand {
+  padding-block: 8rem;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  column-gap: 2rem;
+  align-items: center;
+
+  &_title {
+    grid-column: 1/3;
+  }
+
+  & img {
+    grid-column: 3/-1;
+    width: 100%;
+  }
+}
+
+.greyMain {
+  background-image: url("https://i.328888.xyz/2023/02/07/rSuzZ.png");
+  background-size: cover;
+  background: linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
+}
+
+.steps {
+  padding-block: 8rem;
+
+  &_title {
+    margin-block-end: 4rem;
+  }
+
+  &_step {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    column-gap: 2rem;
+  }
+
+  &_container {
+    padding: 2.4rem;
+    width: 100%;
+    aspect-ratio: 1/1;
+    background-color: $color-white-100;
+    border-radius: 4px;
+    box-shadow: 0px 2px 4px -2px rgba(22, 24, 26, 0.06),
+      0px 4px 8px -2px rgba(22, 24, 26, 0.1);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @include transition-default;
+
+    &:hover {
+      transform: translateY(-1.2rem);
+      box-shadow: 0px 8px 8px -4px rgba(22, 24, 26, 0.03),
+        0px 20px 24px -4px rgba(22, 24, 26, 0.08);
+    }
+
+    & h2 {
+      color: $color-primary;
+    }
+
+    &_text {
+      & h5 {
+        margin-block-end: 0.8rem;
+      }
+
+      & p {
+        color: $color-black-64;
+      }
+    }
+  }
+}
+
+.partners {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 4rem;
+  padding-block: 8rem;
+
+  &_title {
+    grid-column: 1 / -1;
+    margin-block-end: 4rem;
+  }
+
+  &_partner {
+    position: relative;
+    overflow: hidden;
+    height: 59.6rem;
+
+    display: flex;
+    gap: 2rem;
+
+    & .mask {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      scale: 1.05;
+      background: linear-gradient(
+        180deg,
+        #fafafa 0%,
+        rgba(250, 250, 250, 0) 50%,
+        #ffffff 100%
+      );
+      z-index: 2;
+    }
+
+    & img {
+      width: 30%;
+      height: fit-content;
+    }
+
+    & .col-1 {
+      animation: logo-scroll 24s linear infinite;
+    }
+
+    & .col-2 {
+      animation: logo-scroll-reverse 24s linear infinite;
+    }
+
+    & .col-3 {
+      animation: logo-scroll-stagger 24s linear infinite;
+    }
+  }
+
+  &_quote {
+    margin-inline-start: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin: auto;
+
+    & blockquote {
+      padding: 2rem;
+      column-gap: 2rem;
+      row-gap: 0.8rem;
+      background-color: $color-white-100;
+      border: 1px solid $color-black-4;
+      max-width: 48rem;
+      border-radius: 4px;
+      box-shadow: 0px 1px 2px rgba(22, 24, 26, 0.05);
+
+      display: grid;
+      grid-template-columns: 2.4rem 1fr;
+
+      @include transition-default;
+
+      &:hover {
+        transform: translateX(-2.4rem);
+        box-shadow: 2px 0px 8px -2px $color-primary-8,
+          4px 0px 12px -2px $color-primary-12;
+        border: 1px solid $color-primary;
+      }
+
+      & img {
+        grid-column: 1 / 2;
+        grid-row: 1 / 3;
+
+        width: 100%;
+      }
+    }
+
+    &_people {
+      display: flex;
+      flex-direction: column;
+
+      & .caption {
+        color: $color-black-48;
+      }
+    }
+  }
+}
+
+.footer {
+  padding-block: 8rem;
+
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(12, 1fr);
+
+  &_cooperate {
+    grid-column: 1/3;
+
+    & h6 {
+      margin-block-end: 0.4rem;
+      white-space: nowrap;
+    }
+
+    & p {
+      color: $color-black-64;
+      margin-block-end: 2rem;
+      white-space: nowrap;
+    }
+
+    & button {
+      width: 100%;
+      min-width: 16rem;
+
+      &:not(:last-child) {
+        margin-block-end: 1.2rem;
+      }
+    }
+  }
+
+  &_links {
+    grid-column: 6 / -1;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    &_link {
+      display: flex;
+      gap: 1.2rem;
+      flex-direction: column;
+
+      & P {
+        margin-block-end: 0.8rem;
+      }
+
+      & a {
+        @include transition-default;
+
+        &:link,
+        &:visited {
+          color: $color-black-64;
+        }
+
+        &:hover {
+          color: $color-primary;
+        }
+
+        &:active {
+          color: darken($color-primary, 8%);
+        }
+      }
+    }
+  }
+
+  .sep {
+    grid-column: 1 / -1;
+    border-top: 1px solid $color-black-4;
+    margin-block: 4rem;
+  }
+
+  & address {
+    grid-column: 1 / 4;
+
+    & .subline {
+      margin-block-end: 0.4rem;
+      white-space: nowrap;
+    }
+
+    & .caption {
+      color: $color-black-64;
+      white-space: nowrap;
+    }
+  }
+
+  &_contacts {
+    grid-column: 8 / -1;
+    justify-content: end;
+
+    display: flex;
+    gap: 1.6rem;
+    align-items: center;
+
+    & p {
+      margin-inline-end: 0.8rem;
+    }
+  }
+}

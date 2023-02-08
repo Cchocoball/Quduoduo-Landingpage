@@ -1,0 +1,67 @@
+@media (max-width: 1280px) {
+  html {
+    font-size: 50%;
+  }
+}
+
+@media (max-width: 1024px) {
+  html {
+    font-size: 37.5%;
+  }
+}
+
+@media (max-width: 720px) {
+  html {
+    font-size: 32%;
+  }
+
+  .hero {
+    display: flex;
+    flex-direction: column;
+    gap: 8rem;
+
+    &_content {
+      justify-content: center;
+
+      &_slg {
+        text-align: center;
+      }
+
+      &_buttonGroup {
+        justify-content: center;
+      }
+
+      &_statistics {
+        &_statistic {
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  .features {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .hot {
+    .hot_days_day:last-child {
+      display: none;
+    }
+
+    &_musicLists {
+      grid-template-columns: repeat(5, 1fr);
+    }
+
+    .hot_musicLists_item:last-child {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  html {
+    font-size: 24%;
+  }
+}
